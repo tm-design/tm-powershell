@@ -44,6 +44,11 @@ function remoteBranches {
     git branch -r
 }
 
+function setOrigin {
+	param([parameter(Mandatory=$true)][string]$origniUrl)
+	git remote add origin $origniUrl
+}
+
 function pushUpstream {
     $currentBranch
     git branch -l | foreach {
